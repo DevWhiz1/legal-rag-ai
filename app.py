@@ -1,3 +1,9 @@
+try:
+    import pysqlite3
+    import sys
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass  # Fallback to system sqlite3 if pysqlite3 is not available
 """
 Legal RAG Assistant - Streamlit Application
 
